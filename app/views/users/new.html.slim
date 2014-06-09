@@ -1,0 +1,15 @@
+h1 Sign up for WhoBringsWhat
+
+= form_for @user do |f|
+
+  = f.label :name
+  = f.text_field :name, autofocus: true, placeholder: "Your Username"
+
+  = f.label :email
+  = f.email_field :email, placeholder: "email@example.com"
+
+
+  = f.label :password
+  = f.password_field :password
+
+  button.button type="submit" Save
