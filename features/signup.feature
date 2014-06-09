@@ -1,4 +1,4 @@
-Feature: Signup
+Feature: Sign up
 
  Users can sign up
 

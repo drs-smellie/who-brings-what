@@ -40,6 +40,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'capistrano-rails', group: :development
 
 group :test do
+  gem 'rspec-rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'faker'
