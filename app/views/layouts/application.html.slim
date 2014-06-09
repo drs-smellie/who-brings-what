@@ -20,14 +20,21 @@ html lang="en"
         section.top-bar-section
           ul.right
             li.divider
-              li = link_to "Sign me up", root_path
-              li.divider
-              li = link_to "Log me in", root_path
-              li.divider
+              - if current_user
+                li = link_to "Logged in", root_path
+                li.divider
+                li = link_to "Log out", logout_path("current"), method: "delete"
+                li.divider
+
+              - else
+                li = link_to "Sign me up", signup_path
+                li.divider
+                li = link_to "Log me in", login_path
+                li.divider
 
     = render 'layouts/messages'
 
     .row
-      .small-12.columns
+      .large-12.columns
 
         = yield
