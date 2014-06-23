@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
+  get 'about', to: 'welcome#about', as: 'about'
 
   resources :users
   resources :sessions
   resources :events
-
 
   
 end
