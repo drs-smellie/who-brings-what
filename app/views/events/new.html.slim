@@ -1,0 +1,19 @@
+h1 Create your WhoBringsWhat event!
+
+= form_for @event do |f|
+  .large-3.columns
+    = f.label :name, "Event name"
+  .large-9.columns
+    = f.text_field :name, autofocus: true, placeholder: "e.g. 'Cookie Fest 2014'"
+
+  .large-3.columns
+    = f.label :date, "Date & time"
+  .large-9.columns
+    = raw(f.datetime_select(:date, :date_separator => '', :time_separator => '', :datetime_separator => '', :order => [:day, :month, :year, :hour, :minute]).gsub('<select', '<select class=""').to_s)
+
+  .large-3.columns
+    = f.label :description
+  .large-9.columns
+    = f.text_field :description, placeholder: "Give your event a short description..."
+
+  button.button type="submit" Save

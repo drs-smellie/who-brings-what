@@ -9,7 +9,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to root_url, notice: "Awesomesauce. You have created an event!"
     else
-      redirect_to new, notice: "Bummer! Something went wrong. Please try to save your event again."
+      render "new", notice: "Bummer! Something went wrong. Please try to save your event again."
     end
   end
 
