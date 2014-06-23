@@ -3,7 +3,7 @@ Feature: Users
   Users can create events, invite friends and assign tasks to friends
 
   Background:
-    Given that I am a User
+    Given I have signed up
     And I am logged in
 
   Scenario: I can create events

@@ -21,3 +21,9 @@ Given(/^I have signed up$/) do
   @user = FactoryGirl.create :user, name: @name, email: @email
 end
 
+
+Given(/^I am logged in$/) do
+  visit "/login"
+  fill_in "Email", with: @email
+  fill_in "Password", with: "letmeinplease"
+end

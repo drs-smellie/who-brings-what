@@ -7,10 +7,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-
-  get 'welcome/index'
-
-  get 'welcome/about'
+  resources :events
 
 
   

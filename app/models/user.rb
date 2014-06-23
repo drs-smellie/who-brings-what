@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }, allow_blank: false
   validates :password, presence: true, on: :create
 
+  has_many :events
+
 end
