@@ -1,15 +1,20 @@
 h1 Sign up for WhoBringsWhat
 
 = form_for @user do |f|
+  
+  .large-3.columns
+    = f.label :name, "Username"
+  .large-9.columns
+    = f.text_field :name, autofocus: true, placeholder: "Your Username"
 
-  = f.label :name, "Username"
-  = f.text_field :name, autofocus: true, placeholder: "Your Username"
+  .large-3.columns
+    = f.label :email
+  .large-9.columns
+    = f.email_field :email, placeholder: "email@example.com"
 
-  = f.label :email
-  = f.email_field :email, placeholder: "email@example.com"
+  .large-3.columns
+    = f.label :password
+  .large-9.columns
+    = f.password_field :password
 
-
-  = f.label :password
-  = f.password_field :password
-
-  button.button type="submit" Save
+    button.button.radius type="submit" Save

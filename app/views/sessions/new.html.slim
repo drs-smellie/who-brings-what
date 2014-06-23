@@ -1,15 +1,15 @@
-.large-12.columns
+h1 Please log in
 
-    h1 Please log in
+= form_tag sessions_path do
+  .large-3.columns
+    = label_tag :email
+  .large-9.columns
+    = email_field_tag :email, @email, autofocus: true
+  .large-3.columns
+    = label_tag :password
+  .large-9.columns
+    = password_field_tag :password
 
-    = form_tag sessions_path do
-
-      = label_tag :email
-      = email_field_tag :email, @email, autofocus: true
-
-      = label_tag :password
-      = password_field_tag :password
-
-      button.button.radius type="submit" Log in
-
+    button.button.radius type="submit" Log in
+    br/
     p Or #{ link_to "sign up", root_path } if you do not have an account.
