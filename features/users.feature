@@ -9,7 +9,7 @@ Feature: Users
   Scenario: I can create events
     When I create a new event
     Then I can give it the name "Super fun time"
-    And I can give it the date "5-12-2014"
+    And I can give it a date and time
     And I can give it a description "Lets have a super fun time at Sinterklaas"
 
   Scenario: I can invite users for this event
