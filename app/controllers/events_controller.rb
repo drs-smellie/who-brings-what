@@ -5,14 +5,17 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
     if @event.save
-      redirect_to root_url, notice: "Awesomesauce. You have created an event!"
+      redirect_to event_path(@event), notice: "Awesomesauce. You have created an event!"
     else
       render "new", notice: "Bummer! Something went wrong. Please try to save your event again."
     end
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
 
   private 
 

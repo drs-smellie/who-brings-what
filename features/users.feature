@@ -11,6 +11,7 @@ Feature: Users
     Then I can give it the name "Super fun time"
     And I can give it a date and time
     And I can give it a description "Lets have a super fun time at Sinterklaas"
+    And I am redirected to the events page
 
   Scenario: I can invite users for this event
     When I am on the page of the event "Super fun time"
