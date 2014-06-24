@@ -16,11 +16,10 @@ end
 
 Then(/^I can give it a description "(.*?)"$/) do |feestje|
   fill_in "Description", with: feestje
-  click_on "Save"
 end
 
 Then(/^I am redirected to the events page$/) do
-  current_url.should match(@event_url)
+  click_on "Save"
 end
 
 
