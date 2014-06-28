@@ -18,8 +18,16 @@ Then(/^I can give it a description "(.*?)"$/) do |feestje|
   fill_in "Description", with: feestje
 end
 
-Then(/^I am redirected to the events page$/) do
+Then(/^I am redirected to the "(.*?)" page$/) do |eventname|
   click_on "Save"
+  page.should have_content eventname
 end
 
+Given(/^there is an event called "(.*?)"$/) do |eventname|
+  
+end
 
+When(/^I am on the event page "(.*?)"$/) do |eventname|
+  visit "/events/#{@events.id}"
+  page.should have_content eventname
+end
