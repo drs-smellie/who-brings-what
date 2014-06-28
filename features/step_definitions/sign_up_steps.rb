@@ -16,9 +16,13 @@ Then(/^my account is created$/) do
 end
 
 Given(/^I have signed up$/) do
-  @name = Faker::Internet.name
-  @email = Faker::Internet.email
-  @user = FactoryGirl.create :user, name: @name, email: @email
+  visit "/users/new"
+  @name ||= Faker::Internet.name
+  @email ||= Faker::Internet.email
+  fill_in "Username", with: @name
+  fill_in "Email", with: @email
+  fill_in "Password", with: "letmeinplease"
+  click_on "Save"
 end
 
 
