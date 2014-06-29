@@ -3,5 +3,4 @@ class Event < ActiveRecord::Base
 
   validates :name, length: { minimum: 3 }, presence: true
   validates :date, presence: true
-  validates :user, presence: true
 end

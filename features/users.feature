@@ -14,8 +14,8 @@ Feature: Users
     And I am redirected to the "Super fun time" page
 
   Scenario: I can invite users for this event
-    Given there is an event called "Super fun time"
-    When I am on the event page "Super fun time"
+    Given there is an event
+    When I am on the event page
     Then I can invite "barbara@example.com"
     And she receives an invitation email
 

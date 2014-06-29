@@ -23,11 +23,11 @@ Then(/^I am redirected to the "(.*?)" page$/) do |eventname|
   page.should have_content eventname
 end
 
-Given(/^there is an event called "(.*?)"$/) do |eventname|
-  
+Given(/^there is an event$/) do
+  @event = Event.create! name: 'Cookie party', description: "Let's have a great time", date: "2015-06-24 12:30:00"
 end
 
-When(/^I am on the event page "(.*?)"$/) do |eventname|
-  visit "/events/#{@events.id}"
-  page.should have_content eventname
+When(/^I am on the event page$/) do
+  visit "/events/#{@event_id}"
+  puts page.body
 end
