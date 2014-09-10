@@ -31,3 +31,8 @@ end
 When(/^I am on the event page$/) do
   visit "/events/#{@event.id}"
 end
+
+Given(/^there is an Event called "(.*?)"$/) do |event_name|
+  @user = User.create! email: Faker::Internet.email, password: "letmeinplease", name: "Faker McPhakerson"
+  @event = Event.create! user: @user, name: event_name, description: "Let's have a super fun party", date: "2015-10-08 12:30:00"
+end
