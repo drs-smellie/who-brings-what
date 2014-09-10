@@ -24,10 +24,10 @@ Then(/^I am redirected to the "(.*?)" page$/) do |eventname|
 end
 
 Given(/^there is an event$/) do
-  @event = Event.create! name: 'Cookie party', description: "Let's have a great time", date: "2015-06-24 12:30:00"
+  @user = User.create! email: Faker::Internet.email, password: "letmeinplease", name: "Faker McPhakerson"
+  @event = Event.create! user: @user, name: 'Cookie party', description: "Let's have a great time", date: "2015-06-24 12:30:00"
 end
 
 When(/^I am on the event page$/) do
-  visit "/events/#{@event_id}"
-  puts page.body
+  visit "/events/#{@event.id}"
 end
