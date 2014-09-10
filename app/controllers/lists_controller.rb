@@ -5,7 +5,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = lists.build(list_params)
+    #TO DO How to get lists connected to an event
+    @list = current_user.lists.build(list_params)
     if @list.save
       redirect_to event_path(@event), notice: "Awesomesauce. You have created a list!"
     else
