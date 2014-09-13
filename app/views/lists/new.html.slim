@@ -1,7 +1,7 @@
 h2 Create a list for your WhoBringsWhat event
 
 #form-styling
-  = form_for @list do |f|
+  = form_for [@event, @list], url: new_event_list_path do |f|
     .large-3.columns
       = f.label :name, "List name"
     .large-9.columns

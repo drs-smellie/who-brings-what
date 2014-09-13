@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :events
-  resources :lists
-  
+  resources :events do
+    resources :lists
+  end
 end
